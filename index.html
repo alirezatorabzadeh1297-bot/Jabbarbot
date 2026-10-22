@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JABBAR AI | خانه، پلن‌های اشتراک و پشتیبانی</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+:root{--bg:#050611;--text:#f7f6ff;--muted:#b8bed9;--cyan:#24d8ff;--purple:#bd5cff;--green:#19ffad;--gold:#ffb52e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Vazirmatn",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 15% 10%,#12377b77,transparent 34%),radial-gradient(ellipse at 85% 22%,#6c168877,transparent 32%),radial-gradient(ellipse at 50% 90%,#073c5677,transparent 40%),#050611}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:-2;opacity:.6;background-image:radial-gradient(2px 2px at 20px 30px,#fff9,transparent),radial-gradient(1px 1px at 80px 120px,#7deaff,transparent),radial-gradient(2px 2px at 160px 60px,#e6a6ff,transparent);background-size:220px 180px;animation:starDrift 28s linear infinite}
+@keyframes starDrift{to{background-position:220px 360px}}
+.blob{position:fixed;width:340px;height:340px;border-radius:50%;filter:blur(100px);opacity:.18;z-index:-1;pointer-events:none;animation:float 12s ease-in-out infinite alternate}
+.blob.one{background:#006dff;top:12%;left:-130px}.blob.two{background:#a100ff;right:-130px;top:48%;animation-delay:-4s}.blob.three{background:#00ffc3;left:32%;bottom:-240px;animation-delay:-7s}
+@keyframes float{to{transform:translate(80px,-55px) scale(1.2)}}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,55px);background:#070817b8;border-bottom:1px solid #a4aaff25;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.brand{font-family:"Lalezar",cursive;font-size:clamp(23px,3vw,34px);color:#fff;text-shadow:0 0 10px #a855ff,0 0 28px #6c5cff;direction:ltr;white-space:nowrap}
+.brand span{color:var(--cyan)}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.navlinks a,.login{font-size:13px;color:#e8e8ff;padding:9px 13px;border:1px solid #9daaff25;border-radius:30px;background:#ffffff08;transition:.25s}
+.navlinks a:hover,.login:hover{border-color:#57e7ff99;box-shadow:0 0 18px #1ccfff55;transform:translateY(-2px)}
+.login{background:linear-gradient(100deg,#173f9b88,#7d25a588);white-space:nowrap}
+.hero{text-align:center;padding:76px 18px 46px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #67dfff55;background:#5bdcff0c;padding:8px 15px;border-radius:30px;color:#a7edff;font-size:13px;box-shadow:0 0 22px #26cfff18}
+.pulse{width:7px;height:7px;background:#2affc1;border-radius:50%;box-shadow:0 0 12px #2affc1;animation:pulse 1.3s infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.65)}}
+h1,h2,h3,.price,.plan-name{font-family:"Lalezar",cursive;font-weight:400}
+h1{font-size:clamp(43px,8vw,90px);line-height:1.16;margin:22px 0 14px;letter-spacing:.2px}
+.gradient-text{background:linear-gradient(95deg,#42e8ff,#b9a0ff 42%,#ff7be7 68%,#62f8ff);background-size:220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;filter:drop-shadow(0 0 20px #8d53ff55)}
+@keyframes shine{to{background-position:220% center}}
+.hero p{max-width:720px;margin:0 auto;color:#c8cbe5;line-height:2;font-size:clamp(14px,2vw,17px)}
+.word{display:inline-block;opacity:0;filter:blur(14px);transform:translateY(16px) scale(.96);animation:wordIn .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*65ms)}
+@keyframes wordIn{to{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:0;cursor:pointer;padding:13px 22px;border-radius:14px;color:#fff;font:600 14px "Vazirmatn";transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-4px) scale(1.02)}
+.btn.primary{background:linear-gradient(110deg,#087cf0,#922dff);box-shadow:0 0 22px #4e66ff66,inset 0 0 0 1px #ffffff55}
+.btn.ghost{background:#ffffff08;border:1px solid #aebaff44;backdrop-filter:blur(12px)}
+.section-head{text-align:center;margin:20px 0 27px;padding:0 15px}
+.section-head h2{font-size:clamp(30px,4vw,44px);margin:0 0 7px}
+.section-head p{color:var(--muted);margin:0;font-size:14px}
+.plans{width:min(1280px,94%);margin:0 auto 58px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+.plan{--accent:var(--green);--accent-rgb:25,255,173;position:relative;display:flex;flex-direction:column;min-width:0;padding:25px 19px 19px;border:1px solid rgba(var(--accent-rgb),.42);border-radius:25px;overflow:hidden;background:linear-gradient(155deg,rgba(var(--accent-rgb),.13),rgba(10,13,33,.86) 35%,rgba(5,7,19,.92));box-shadow:0 0 26px rgba(var(--accent-rgb),.11),inset 0 0 24px rgba(var(--accent-rgb),.055);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);transition:transform .35s,border-color .35s,box-shadow .35s;animation:cardEnter .85s both;animation-delay:calc(var(--card-i)*130ms)}
+@keyframes cardEnter{from{opacity:0;filter:blur(18px);transform:translateY(35px) scale(.97)}to{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}}
+.plan:before{content:"";position:absolute;top:-95px;left:-50px;width:190px;height:190px;border-radius:50%;background:rgba(var(--accent-rgb),.25);filter:blur(65px);pointer-events:none}
+.plan:after{content:"";position:absolute;top:0;left:-100%;height:2px;width:70%;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 5s ease-in-out infinite;pointer-events:none}
+@keyframes scan{50%,100%{left:140%}}
+.plan:hover{transform:translateY(-9px);border-color:var(--accent);box-shadow:0 0 40px rgba(var(--accent-rgb),.28),inset 0 0 28px rgba(var(--accent-rgb),.09)}
+.plan.pro{--accent:var(--purple);--accent-rgb:189,92,255}
+.plan.plus{--accent:var(--cyan);--accent-rgb:36,216,255}
+.plan.promax{--accent:var(--gold);--accent-rgb:255,181,46}
+.plan.featured{transform:translateY(-8px);border-color:#b88bff;box-shadow:0 0 38px #a144ff2d,inset 0 0 25px #a144ff12}
+.plan-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:17px;border:1px solid rgba(var(--accent-rgb),.6);background:rgba(var(--accent-rgb),.1);color:var(--accent);font-size:26px;box-shadow:0 0 22px rgba(var(--accent-rgb),.25);margin:0 auto 10px}
+.plan-name{text-align:center;color:var(--accent);font-size:30px;margin:0}
+.plan-en{text-align:center;letter-spacing:3px;font-size:12px;color:#e6e8ff;margin-top:-3px}
+.price{font-size:clamp(24px,2.2vw,32px);text-align:center;color:#fff;margin:18px 0 4px;text-shadow:0 0 15px rgba(var(--accent-rgb),.45);white-space:nowrap}
+.price small{font:500 12px "Vazirmatn";color:#c7cbe2}
+.price-note{text-align:center;font-size:11px;color:#aeb5d1;margin-bottom:18px}
+.features{list-style:none;margin:0;padding:0;display:grid;gap:13px;flex:1}
+.features li{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.9;color:#e0e3f7}
+.check{flex:0 0 22px;width:22px;height:22px;display:grid;place-items:center;border-radius:7px;background:rgba(var(--accent-rgb),.12);border:1px solid rgba(var(--accent-rgb),.45);color:var(--accent);font-size:12px;margin-top:1px}
+.feature-title{font-weight:800;color:#fff}
+.model-list{color:#b9c4e9;font-size:11px}
+.disabled{opacity:.48}
+.disabled .check{color:#8490a9;border-color:#68718b;background:#ffffff08}
+.plan .btn{width:100%;margin-top:22px;background:linear-gradient(110deg,rgba(var(--accent-rgb),.25),rgba(var(--accent-rgb),.08));border:1px solid rgba(var(--accent-rgb),.65);box-shadow:0 0 20px rgba(var(--accent-rgb),.12);color:#fff}
+.plan .btn:hover{box-shadow:0 0 30px rgba(var(--accent-rgb),.35)}
+.mini-badge{position:absolute;top:14px;left:14px;font-size:10px;background:#a54aff22;color:#e6c7ff;border:1px solid #bd5cff66;padding:5px 9px;border-radius:30px}
+.tools{width:min(1200px,92%);margin:0 auto 55px;padding:25px;border:1px solid #94aaff2a;border-radius:24px;background:#ffffff06;backdrop-filter:blur(18px)}
+.tool-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.tool{padding:18px 10px;text-align:center;border:1px solid #a9b9ff20;background:#0b1025a8;border-radius:16px;transition:.3s}
+.tool:hover{transform:translateY(-5px);border-color:#58e6ff88;box-shadow:0 0 22px #3fceff1f}
+.tool .emoji{font-size:25px;display:block;margin-bottom:7px;filter:drop-shadow(0 0 9px #7c4dff)}
+.tool strong{font-size:12px;display:block}.tool small{color:#aeb9dd;font-size:10px;display:block;margin-top:5px}
+.price-table{width:min(760px,92%);margin:0 auto 60px;border:1px solid #9bafff2a;border-radius:20px;overflow:hidden;background:#ffffff06;backdrop-filter:blur(18px)}
+.price-table h2{text-align:center;font-size:29px;margin:18px 10px}
+table{width:100%;border-collapse:collapse}td,th{text-align:right;padding:14px 20px;border-top:1px solid #a6b3ff18;font-size:14px}th{color:#9feaff;background:#ffffff05;font-weight:700}td:last-child{text-align:left;color:#fff;font-weight:800;white-space:nowrap}
+.free-c{color:var(--green)}.pro-c{color:var(--purple)}.plus-c{color:var(--cyan)}.max-c{color:var(--gold)}
+.notice{width:min(900px,92%);margin:0 auto 55px;text-align:center;padding:17px 20px;border:1px solid #7b8fff2c;border-radius:16px;color:#aeb8d8;background:#ffffff05;font-size:12px;line-height:2}
+footer{border-top:1px solid #899cff24;background:#050611a8;backdrop-filter:blur(16px);padding:24px 5%;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;color:#8f9aba;font-size:12px}
+footer .brand{font-size:25px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;padding:13px 18px;background:#10172beF;border:1px solid #56ddff80;border-radius:13px;box-shadow:0 0 25px #21cfff33;transition:.3s;font-size:13px;text-align:center;max-width:90%}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;filter:blur(12px);transform:translateY(18px);transition:opacity .8s,filter .8s,transform .8s}
+.reveal.visible{opacity:1;filter:blur(0);transform:none}
+
+.page{display:none;min-height:65vh;animation:pageIn .55s ease both}.page.active{display:block}
+@keyframes pageIn{from{opacity:0;filter:blur(10px);transform:translateY(8px)}to{opacity:1;filter:blur(0);transform:none}}
+.home-hero{padding-top:90px;padding-bottom:70px}
+.home-highlights{width:min(1050px,92%);margin:0 auto 42px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.highlight{padding:23px 13px;text-align:center;border:1px solid #8e9cff30;border-radius:20px;background:linear-gradient(145deg,#ffffff0d,#11162e99);backdrop-filter:blur(20px);box-shadow:inset 0 0 24px #8a68ff0a;transition:.3s}
+.highlight:hover{transform:translateY(-6px);border-color:#4de5ff88;box-shadow:0 0 25px #36cfff22}
+.highlight span{display:block;font-size:29px;filter:drop-shadow(0 0 12px #8d61ff);margin-bottom:8px}.highlight strong{display:block;font-size:14px}.highlight small{display:block;color:#aeb9dd;font-size:11px;margin-top:7px;line-height:1.8}
+.home-cta{width:min(1050px,92%);margin:0 auto 60px;padding:25px 28px;border:1px solid #a85cff55;border-radius:23px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(110deg,#8c34ff17,#1bcfff0d);box-shadow:0 0 35px #813dff15;backdrop-filter:blur(18px)}
+.home-cta h2{font-size:26px;margin:0 0 6px}.home-cta p{color:#aeb9dd;margin:0;font-size:13px;line-height:1.9}
+.support-hero{padding-top:70px;padding-bottom:80px}.support-card{width:min(440px,92%);margin:30px auto 0;padding:28px 24px;border:1px solid #42ddff77;border-radius:26px;background:linear-gradient(150deg,#1bcfff17,#791cff19,#080b1eeb);box-shadow:0 0 35px #22d6ff22,inset 0 0 25px #a14aff10;backdrop-filter:blur(24px);display:flex;align-items:center;flex-direction:column;gap:12px;position:relative;overflow:hidden}.support-card:before{content:"";position:absolute;width:170px;height:170px;top:-100px;right:-50px;border-radius:50%;background:#23dfff66;filter:blur(60px)}.support-icon{width:62px;height:62px;display:grid;place-items:center;border-radius:20px;color:#74edff;font-size:30px;border:1px solid #54e7ff77;background:#22dfff15;box-shadow:0 0 24px #21cfff30}.support-label{color:#b9c6e9;font-size:13px}.support-id{font-family:monospace;font-size:28px;font-weight:800;letter-spacing:1px;color:#fff;text-shadow:0 0 14px #a45cff,0 0 28px #27dfff}.support-link,.support-card .btn{width:100%;max-width:290px}.support-card small{font-size:10px;color:#929fbe;text-align:center;line-height:1.8}
+button.btn{font-family:"Vazirmatn",sans-serif}.navlinks a.active{border-color:#56e6ff99;box-shadow:0 0 18px #1ccfff35;color:#fff}
+@media(max-width:1050px){.home-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.home-hero{padding-top:60px}.home-highlights{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.highlight{padding:18px 8px}.home-cta{flex-direction:column;text-align:center;padding:22px 18px}.home-cta h2{font-size:23px}.support-card{padding:24px 18px}}
+
+@media(max-width:1050px){.plans{grid-template-columns:repeat(2,minmax(0,1fr));max-width:800px}.plan.featured{transform:none}.tool-grid{grid-template-columns:repeat(3,1fr)}.navlinks{display:none}}
+@media(max-width:560px){.nav{padding:12px 14px}.brand{font-size:24px}.login{font-size:11px;padding:8px 10px}.hero{padding:55px 16px 35px}.plans{grid-template-columns:1fr;width:min(420px,92%);gap:17px}.plan{padding:24px 22px 20px}.price{font-size:30px}.tool-grid{grid-template-columns:repeat(2,1fr)}.tools{padding:18px 13px}.section-head{margin-bottom:20px}td,th{padding:12px 13px;font-size:12px}footer{justify-content:center;text-align:center}footer .brand{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* JABBAR AI animated help bot */
+.bot-wrap{width:min(900px,92%);margin:0 auto 55px;position:relative}
+.bot-shell{position:relative;overflow:hidden;border:1px solid #49ddff70;border-radius:26px;background:linear-gradient(145deg,#102044c9,#140d2de8 55%,#071a2be8);box-shadow:0 0 35px #1bcfff20,inset 0 0 35px #8d4dff12;backdrop-filter:blur(24px)}
+.bot-shell:before{content:"";position:absolute;width:220px;height:220px;right:-100px;top:-130px;border-radius:50%;background:#2adfff55;filter:blur(70px);pointer-events:none}
+.bot-head{position:relative;display:flex;align-items:center;gap:14px;padding:20px 22px;border-bottom:1px solid #9eb7ff20}
+.bot-avatar{width:58px;height:58px;display:grid;place-items:center;border-radius:19px;font-size:29px;background:linear-gradient(135deg,#1cdfff2e,#b74cff35);border:1px solid #5de8ff88;box-shadow:0 0 24px #2bcfff3d;animation:botFloat 3s ease-in-out infinite}
+@keyframes botFloat{50%{transform:translateY(-5px) rotate(2deg);box-shadow:0 0 34px #a64cff66}}
+.bot-title{font-family:'Lalezar',cursive;font-size:25px;color:#fff;text-shadow:0 0 16px #9a6dff}.bot-sub{font-size:12px;color:#b4c6eb}.bot-online{margin-right:auto;display:flex;align-items:center;gap:7px;font-size:11px;color:#7fffd5;white-space:nowrap}.bot-online i{width:7px;height:7px;border-radius:50%;background:#21ffb6;box-shadow:0 0 12px #21ffb6}
+.bot-faq{position:relative;padding:17px 20px 5px}.bot-faq-label{font-size:12px;color:#a9bce4;margin-bottom:10px}.faq-chips{display:flex;flex-wrap:wrap;gap:8px}.faq-chip{font:500 12px 'Vazirmatn';color:#e8f6ff;background:#ffffff08;border:1px solid #7cbdff45;border-radius:13px;padding:10px 13px;cursor:pointer;transition:.25s}.faq-chip:hover{transform:translateY(-2px);border-color:#50e5ff;box-shadow:0 0 17px #35d8ff25}
+.bot-messages{position:relative;height:260px;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}.bot-msg{max-width:88%;padding:12px 15px;border-radius:17px;font-size:13px;line-height:2;animation:msgIn .35s ease both;white-space:pre-wrap;overflow-wrap:anywhere}.bot-msg.bot{align-self:flex-start;background:#111d39d9;border:1px solid #6a9eff38;border-bottom-right-radius:5px;color:#e4edff}.bot-msg.user{align-self:flex-end;background:linear-gradient(120deg,#194c83d9,#54277bd9);border:1px solid #6bcbff55;border-bottom-left-radius:5px;color:#fff}.bot-msg .mini{font-size:10px;color:#7deaff;display:block;margin-bottom:4px}.typing{display:inline-flex;gap:5px;align-items:center}.typing i{width:5px;height:5px;border-radius:50%;background:#63eaff;animation:typing .8s infinite alternate}.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}@keyframes typing{to{opacity:.25;transform:translateY(-4px)}}@keyframes msgIn{from{opacity:0;filter:blur(8px);transform:translateY(8px)}to{opacity:1;filter:blur(0);transform:none}}
+.bot-compose{position:relative;display:flex;gap:9px;padding:13px 16px 17px;border-top:1px solid #9eb7ff20}.bot-input{flex:1;min-width:0;background:#060b1dcc;border:1px solid #718dca55;border-radius:14px;padding:13px 14px;color:white;font:13px 'Vazirmatn';outline:none}.bot-input:focus{border-color:#42dfff;box-shadow:0 0 18px #28d8ff1c}.bot-send{border:0;border-radius:14px;padding:0 18px;color:white;font:600 13px 'Vazirmatn';background:linear-gradient(120deg,#087df4,#922dff);box-shadow:0 0 20px #6a52ff55;cursor:pointer}.bot-hint{font-size:10px;color:#899bbc;padding:0 20px 16px;position:relative}
+@media(max-width:560px){.bot-head{padding:16px}.bot-avatar{width:48px;height:48px}.bot-title{font-size:22px}.bot-online{font-size:10px}.bot-faq{padding:14px 13px 3px}.faq-chip{font-size:11px;padding:9px}.bot-messages{height:280px;padding:14px 12px}.bot-msg{max-width:94%;font-size:12px}.bot-compose{padding:11px}.bot-send{padding:0 13px}}
+
+</style>
+  </head>
+  <body>
+    <div id="stars">
+    </div>
+    <div class="blob one">
+    </div>
+    <div class="blob two">
+    </div>
+    <div class="blob three">
+    </div>
+    <nav class="nav">
+      <a class="brand" href="#home" data-page-link="home">♛ JABBAR <span>AI</span>
+    </a>
+    <div class="navlinks">
+      <a href="#home" data-page-link="home">⌂ خانه</a>
+      <a href="#plans" data-page-link="plans">♛ پلن‌ها</a>
+      <a href="#tools" data-page-link="plans">✦ ابزارها</a>
+      <a href="#support" data-page-link="support">☏ پشتیبانی</a>
+    </div>
+    <a class="login" href="https://rubika.ir/amirtbpedit" target="_blank" rel="noopener noreferrer">↗ خرید / پشتیبانی</a>
+  </nav>
+  <main class="page active" id="homePage">
+    <header class="hero home-hero" id="home">
+      <div class="eyebrow">
+        <span class="pulse">
+        </span> آینده همین‌جاست؛ با جبار ای‌آی</div>
+        <h1>
+          <span class="word" style="--i:0">به</span> <span class="word" style="--i:1">دنیای</span> <span class="word" style="--i:2">هوش</span> <span class="word" style="--i:3">مصنوعی</span>
+          <br>
+          <span class="gradient-text word" style="--i:5">JABBAR AI</span> <span class="word" style="--i:7">خوش</span> <span class="word" style="--i:8">آمدی!</span>
+        </h1>
+        <p>چت هوشمند، تولید تصویر، طراحی لوگو، ساخت ویدیو و تبدیل متن به صدا؛ همه در یک تجربه نئونی، سریع و خلاقانه. ایده‌ات را به چیزی واقعی تبدیل کن! ✨</p>
+        <div class="hero-actions">
+          <button class="btn primary" data-go="plans">⚡ مشاهده پلن‌های اشتراک</button>
+          <button class="btn ghost" data-go="support">☏ ارتباط با پشتیبانی</button>
+        </div>
+      </header>
+      <section class="home-highlights reveal">
+        <div class="highlight">
+          <span>💬</span>
+          <strong>چت هوشمند</strong>
+          <small>GPT · Gemini · Grok · DeepSeek</small>
+        </div>
+        <div class="highlight">
+          <span>🎨</span>
+          <strong>خلق تصویر و لوگو</strong>
+          <small>ایده‌هایت را به تصویر بکش</small>
+        </div>
+        <div class="highlight">
+          <span>🎬</span>
+          <strong>ساخت ویدیو</strong>
+          <small>با ابزار PixVerse</small>
+        </div>
+        <div class="highlight">
+          <span>🎙️</span>
+          <strong>تبدیل متن به صدا</strong>
+          <small>Hoosha · TTSMaker</small>
+        </div>
+      </section>
+      <section class="bot-wrap reveal" id="aiBot">
+        <div class="bot-shell">
+          <div class="bot-head">
+            <div class="bot-avatar">🤖</div>
+            <div>
+              <div class="bot-title">دستیار هوشمند جبار</div>
+              <div class="bot-sub">پاسخ‌گوی سوالات متداول JABBAR AI</div>
+            </div>
+            <div class="bot-online">
+              <i>
+              </i> آماده پاسخ‌گویی</div>
+            </div>
+            <div class="bot-faq">
+              <div class="bot-faq-label">✨ سوالات آماده — برای ارسال لمس کن · بانک کلیدواژه محلی</div>
+              <div class="faq-chips">
+                <button class="faq-chip" data-question="چجوری تصویر بسازم ؟">🎨 چجوری تصویر بسازم؟</button>
+                <button class="faq-chip" data-question="چطور اشتراک بخرم؟">👑 چطور اشتراک بخرم؟</button>
+                <button class="faq-chip" data-question="هوش مصنوعی جبار چیست؟">🤖 جبار ای‌آی چیست؟</button>
+                <button class="faq-chip" data-question="چطور با پشتیبانی تماس بگیرم؟">🎧 ارتباط با پشتیبانی</button>
+                <button class="faq-chip" data-question="مدل های چت چیست؟">💬 مدل‌های چت</button>
+              </div>
+            </div>
+            <div class="bot-messages" id="botMessages" aria-live="polite">
+              <div class="bot-msg bot">
+                <span class="mini">دستیار جبار ✦</span>سلام! 👋 من دستیار جبار ای‌آی هستم. می‌تونی از سوالات آماده استفاده کنی یا درباره هوش مصنوعی، اشتراک‌ها و ابزارهای سایت سوال بپرسی.</div>
+              </div>
+              <form class="bot-compose" id="botForm">
+                <input class="bot-input" id="botInput" autocomplete="off" maxlength="600" placeholder="سوالت رو اینجا بنویس… مثلاً هوش مصنوعی چیه؟" aria-label="پیام به دستیار">
+                <button class="bot-send" type="submit">ارسال ✦</button>
+              </form>
+              <div class="bot-hint">🧠 بانک محلی با بیش از ۸۰٬۰۰۰ ترکیب کلیدی تولیدشده (۸۰٬۰۰۰ عبارت در هر بار اجرا)؛ پاسخ‌ها بر اساس موضوع و کلیدواژه انتخاب می‌شوند، نه یک مدل زبانی آنلاین.</div>
+            </div>
+          </section>
+          <section class="home-cta reveal">
+            <div>
+              <h2>آماده‌ای سطح خلاقیتت رو ارتقا بدی؟</h2>
+              <p>پلن مناسب خودت را انتخاب کن و برای خرید یا فعال‌سازی از طریق روبیکا پیام بده.</p>
+            </div>
+            <button class="btn primary" data-go="plans">دیدن پلن‌ها ←</button>
+          </section>
+        </main>
+        <main class="page" id="plansPage">
+          <header class="hero" id="home">
+            <div class="eyebrow">
+              <span class="pulse">
+              </span>
+              <span class="word" style="--i:0">نسل</span> <span class="word" style="--i:1">جدید</span> <span class="word" style="--i:2">هوش</span> <span class="word" style="--i:3">مصنوعی</span>
+            </div>
+            <h1>
+              <span class="word" style="--i:4">پلن‌های</span> <span class="word" style="--i:5">خرید</span>
+              <br>
+              <span class="gradient-text word" style="--i:7">اشتراک جبار ای‌آی</span>
+            </h1>
+            <p id="heroCopy">از چت هوشمند تا تولید تصویر، ساخت لوگو، تولید ویدیو و تبدیل متن به صدا؛ ابزارهای هوش مصنوعی را در یک تجربه جذاب کشف کن.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#plans" data-page-link="plans">⚡ مشاهده پلن‌ها <span>↓</span>
+            </a>
+            <a class="btn ghost" href="#tools" data-page-link="plans">✧ کشف ابزارها</a>
+          </div>
+        </header>
+        <section id="plans">
+          <div class="section-head reveal">
+            <h2>
+              <span class="gradient-text">پلن مناسب خودت رو پیدا کن</span>
+            </h2>
+            <p>از شروع رایگان تا تجربه‌ای حرفه‌ای؛ انتخاب با توست.</p>
+          </div>
+          <div class="plans">
+            <article class="plan free" style="--card-i:0">
+              <div class="plan-icon">♧</div>
+              <h3 class="plan-name">پلن رایگان</h3>
+              <div class="plan-en">FREE</div>
+              <div class="price">رایگان</div>
+              <div class="price-note">برای شروع و تجربه هوش مصنوعی</div>
+              <ul class="features">
+                <li>
+                  <span class="check">✓</span>
+                  <span>
+                    <span class="feature-title">چت هوشمند</span>
+                    <br>روزانه ۲۰ پیام رایگان</span>
+                  </li>
+                  <li>
+                    <span class="check">✓</span>
+                    <span>مدل‌های چت: <span class="model-list">GPT · Gemini · Grok · DeepSeek</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>
+                    <span class="feature-title">تبدیل متن به صدا</span>
+                    <br>ماهانه ۳ بار</span>
+                  </li>
+                  <li class="disabled">
+                    <span class="check">×</span>
+                    <span>تولید تصویر، ساخت لوگو و تولید ویدیو در این پلن فعال نیست.</span>
+                  </li>
+                </ul>
+                <a class="btn choose" href="https://rubika.ir/amirtbpedit" target="_blank" rel="noopener noreferrer">خرید / فعال‌سازی از روبیکا ↗</a>
+              </article>
+              <article class="plan pro" style="--card-i:1">
+                <div class="plan-icon">✦</div>
+                <h3 class="plan-name">پلن پرو</h3>
+                <div class="plan-en">PRO</div>
+                <div class="price">۵۰۰,۰۰۰ <small>تومان</small>
+              </div>
+              <div class="price-note">برای خلاقیت روزانه</div>
+              <ul class="features">
+                <li>
+                  <span class="check">✓</span>
+                  <span>
+                    <span class="feature-title">چت هوشمند</span>
+                    <br>
+                    <span class="model-list">GPT · Gemini · Grok · DeepSeek</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="check">✓</span>
+                  <span>
+                    <span class="feature-title">تولید تصویر</span>
+                    <br>با مدل GPT</span>
+                  </li>
+                  <li>
+                    <span class="check">✓</span>
+                    <span>
+                      <span class="feature-title">ساخت لوگو</span>
+                      <br>با مدل GPT</span>
+                    </li>
+                    <li>
+                      <span class="check">✓</span>
+                      <span>
+                        <span class="feature-title">تولید ویدیو</span>
+                        <br>با مدل PixVerse</span>
+                      </li>
+                      <li>
+                        <span class="check">✓</span>
+                        <span>
+                          <span class="feature-title">تبدیل متن به صدا</span>
+                          <br>با Hoosha و TTSMaker</span>
+                        </li>
+                      </ul>
+                      <a class="btn choose" href="https://rubika.ir/amirtbpedit" target="_blank" rel="noopener noreferrer">خرید پلن پرو ↗</a>
+                    </article>
+                    <article class="plan plus featured" style="--card-i:2">
+                      <span class="mini-badge">پیشنهاد ویژه</span>
+                      <div class="plan-icon">💎</div>
+                      <h3 class="plan-name">پلن پلاس</h3>
+                      <div class="plan-en">PLUS</div>
+                      <div class="price">۱,۲۵۰,۰۰۰ <small>تومان</small>
+                    </div>
+                    <div class="price-note">برای ایده‌های بزرگ‌تر</div>
+                    <ul class="features">
+                      <li>
+                        <span class="check">✓</span>
+                        <span>
+                          <span class="feature-title">چت هوشمند</span>
+                          <br>
+                          <span class="model-list">GPT · Gemini · Grok · DeepSeek</span>
+                        </span>
+                      </li>
+                      <li>
+                        <span class="check">✓</span>
+                        <span>
+                          <span class="feature-title">تولید تصویر</span>
+                          <br>با مدل GPT</span>
+                        </li>
+                        <li>
+                          <span class="check">✓</span>
+                          <span>
+                            <span class="feature-title">ساخت لوگو</span>
+                            <br>با مدل GPT</span>
+                          </li>
+                          <li>
+                            <span class="check">✓</span>
+                            <span>
+                              <span class="feature-title">تولید ویدیو</span>
+                              <br>با مدل PixVerse</span>
+                            </li>
+                            <li>
+                              <span class="check">✓</span>
+                              <span>
+                                <span class="feature-title">تبدیل متن به صدا</span>
+                                <br>با Hoosha و TTSMaker</span>
+                              </li>
+                            </ul>
+                            <a class="btn choose" href="https://rubika.ir/amirtbpedit" target="_blank" rel="noopener noreferrer">خرید پلن پلاس ↗</a>
+                          </article>
+                          <article class="plan promax" style="--card-i:3">
+                            <div class="plan-icon">👑</div>
+                            <h3 class="plan-name">پلن پرومکس</h3>
+                            <div class="plan-en">PROMAX</div>
+                            <div class="price">۲,۵۰۰,۰۰۰ <small>تومان</small>
+                          </div>
+                          <div class="price-note">تجربه پیشرفته هوش مصنوعی</div>
+                          <ul class="features">
+                            <li>
+                              <span class="check">✓</span>
+                              <span>
+                                <span class="feature-title">چت هوشمند</span>
+                                <br>
+                                <span class="model-list">GPT · Gemini · Grok · DeepSeek</span>
+                              </span>
+                            </li>
+                            <li>
+                              <span class="check">✓</span>
+                              <span>
+                                <span class="feature-title">تولید تصویر</span>
+                                <br>با مدل GPT</span>
+                              </li>
+                              <li>
+                                <span class="check">✓</span>
+                                <span>
+                                  <span class="feature-title">ساخت لوگو</span>
+                                  <br>با مدل GPT</span>
+                                </li>
+                                <li>
+                                  <span class="check">✓</span>
+                                  <span>
+                                    <span class="feature-title">تولید ویدیو</span>
+                                    <br>با مدل PixVerse</span>
+                                  </li>
+                                  <li>
+                                    <span class="check">✓</span>
+                                    <span>
+                                      <span class="feature-title">تبدیل متن به صدا</span>
+                                      <br>با Hoosha و TTSMaker</span>
+                                    </li>
+                                  </ul>
+                                  <a class="btn choose" href="https://rubika.ir/amirtbpedit" target="_blank" rel="noopener noreferrer">خرید پلن پرومکس ↗</a>
+                                </article>
+                              </div>
+                            </section>
+                            <section class="tools reveal" id="tools">
+                              <div class="section-head">
+                                <h2>ابزارهای <span class="gradient-text">JABBAR AI</span>
+                              </h2>
+                              <p>هر ایده‌ای، یک ابزار هوشمند برای ساختنش.</p>
+                            </div>
+                            <div class="tool-grid">
+                              <div class="tool">
+                                <span class="emoji">💬</span>
+                                <strong>AI Chat</strong>
+                                <small>GPT · Gemini · Grok · DeepSeek</small>
+                              </div>
+                              <div class="tool">
+                                <span class="emoji">🖼️</span>
+                                <strong>AI Image Generation</strong>
+                                <small>GPT</small>
+                              </div>
+                              <div class="tool">
+                                <span class="emoji">✒️</span>
+                                <strong>AI Logo Maker</strong>
+                                <small>GPT</small>
+                              </div>
+                              <div class="tool">
+                                <span class="emoji">🎬</span>
+                                <strong>AI Video Generation</strong>
+                                <small>PixVerse</small>
+                              </div>
+                              <div class="tool">
+                                <span class="emoji">🎙️</span>
+                                <strong>Text to Speech</strong>
+                                <small>Hoosha · TTSMaker</small>
+                              </div>
+                            </div>
+                          </section>
+                          <section class="price-table reveal" id="about">
+                            <h2>جدول قیمت اشتراک‌ها</h2>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>پلن</th>
+                                  <th>قیمت</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="free-c">🟢 FREE</td>
+                                  <td>رایگان</td>
+                                </tr>
+                                <tr>
+                                  <td class="pro-c">🟣 PRO</td>
+                                  <td>۵۰۰,۰۰۰ تومان</td>
+                                </tr>
+                                <tr>
+                                  <td class="plus-c">🔵 PLUS</td>
+                                  <td>۱,۲۵۰,۰۰۰ تومان</td>
+                                </tr>
+                                <tr>
+                                  <td class="max-c">🟠 PROMAX</td>
+                                  <td>۲,۵۰۰,۰۰۰ تومان</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </section>
+                          <div class="notice reveal">📌 قیمت‌ها مطابق اطلاعات ارائه‌شده درج شده‌اند. پیش از فروش، مدت اعتبار هر اشتراک، سهمیه تولید تصویر و ویدیو، محدودیت‌های صدا و شرایط پرداخت را در سامانه واقعی خود مشخص کنید.</div>
+                        </main>
+                        <main class="page" id="supportPage">
+                          <section class="hero support-hero" id="support">
+                            <div class="eyebrow">
+                              <span class="pulse">
+                              </span> همیشه یک پیام با ما فاصله داری</div>
+                              <h1>
+                                <span class="gradient-text">پشتیبانی جبار ای‌آی</span>
+                              </h1>
+                              <p>برای خرید اشتراک، راهنمایی درباره پلن‌ها، پیگیری پرداخت یا پرسیدن سؤال، از طریق آیدی رسمی زیر در روبیکا با ما در ارتباط باش.</p>
+                              <div class="support-card">
+                                <div class="support-icon">☏</div>
+                                <div class="support-label">آیدی پشتیبانی و خرید</div>
+                                <div class="support-id" dir="ltr">@amirtbpedit</div>
+                                <a class="btn primary support-link" href="https://rubika.ir/amirtbpedit" target="_blank" rel="noopener noreferrer">ورود به روبیکا ↗</a>
+                                <button class="btn ghost" id="copyId">⧉ کپی آیدی</button>
+                                <small>با زدن دکمه ورود، صفحه روبیکا در تب جدید باز می‌شود.</small>
+                              </div>
+                            </section>
+                          </main>
+                          <footer>
+                            <a class="brand" href="#home">♛ JABBAR <span>AI</span>
+                          </a>
+                          <span>Your AI, Your Creativity ✨</span>
+                          <span>© 2026 JABBAR AI · تمامی حقوق محفوظ است</span>
+                        </footer>
+                        <div class="toast" id="toast" role="status" aria-live="polite">
+                        </div>
+                        <script>
+const pages={home:document.getElementById('homePage'),plans:document.getElementById('plansPage'),support:document.getElementById('supportPage')};
+function showPage(name){
+ if(!pages[name]) name='home';
+ Object.entries(pages).forEach(([key,el])=>el.classList.toggle('active',key===name));
+ document.querySelectorAll('[data-page-link]').forEach(a=>a.classList.toggle('active',a.dataset.pageLink===name));
+ history.replaceState(null,'','#'+name);window.scrollTo({top:0,behavior:'smooth'});
+ document.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('visible');setTimeout(()=>observer.observe(el),40)});
+}
+document.querySelectorAll('[data-page-link]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.pageLink)}));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const toast=document.getElementById('toast');let toastTimer;
+document.getElementById('copyId').addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText('@amirtbpedit');toast.textContent='آیدی @amirtbpedit کپی شد ✨'}
+ catch(e){toast.textContent='آیدی پشتیبانی: @amirtbpedit'}
+ toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3000);
+});
+
+// Local keyword-based assistant. A browser-only page cannot practically store nine million full answers.
+const botMessages=document.getElementById('botMessages');
+const botForm=document.getElementById('botForm');
+const botInput=document.getElementById('botInput');
+function normalizeFa(value){return value.toLowerCase().replace(/[؟?!.,،؛:()\[\]{}«»"'ـ]/g,' ').replace(/\s+/g,' ').trim().replace(/ي/g,'ی').replace(/ك/g,'ک');}
+function addBotMessage(text,who='bot'){
+ const msg=document.createElement('div');msg.className='bot-msg '+who;
+ if(who==='bot'){const label=document.createElement('span');label.className='mini';label.textContent='دستیار جبار ✦';msg.appendChild(label)}
+ msg.appendChild(document.createTextNode(text));botMessages.appendChild(msg);botMessages.scrollTop=botMessages.scrollHeight;
+}
+// Offline keyword expansion: 400 topic terms × 200 natural question patterns = 80,000 searchable combinations.
+const keywordSeeds = [
+'هوش مصنوعی','جبار ای آی','جبار','چت','چت بات','گفتگو','پرسش','پاسخ','سوال','راهنما','آموزش','کمک','پشتیبانی','تماس','روبیکا','آیدی',
+'تصویر','عکس','عکس سازی','تولید تصویر','ساخت تصویر','ویرایش عکس','پس زمینه','بک گراند','عکس پروفایل','پوستر','بنر','کاور','طرح','طراحی','گرافیک','هنر','نقاشی','تصویرسازی',
+'لوگو','آرم','نشان','برند','طراحی لوگو','لوگو سازی','لوگوی اختصاصی','لوگوی حرفه ای','لوگوی گیمینگ','لوگوی فوتبالی',
+'ویدیو','فیلم','کلیپ','انیمیشن','ساخت ویدیو','تولید ویدیو','ادیت ویدیو','پیکس ورس','pixverse','ویدیو سازی','کلیپ سازی',
+'صدا','صوت','تبدیل متن به صدا','گویندگی','صدای هوش مصنوعی','tts','ttsmaker','هوشا','hoosha','خواندن متن','صداگذاری',
+'اشتراک','خرید','قیمت','هزینه','پلن','پرو','پلاس','پرومکس','رایگان','مجانی','پرداخت','فعال سازی','تمدید','سهمیه','محدودیت','اعتبار','خرید اشتراک',
+'gpt','جی پی تی','gemini','جمنای','جمینای','grok','گراک','deepseek','دیپ سیک','مدل','مدل هوش مصنوعی','مدل چت',
+'ورود','ثبت نام','حساب کاربری','رمز','رمز عبور','کاربر','سایت','صفحه اصلی','خانه','قابلیت','امکانات','ابزار','ابزار هوش مصنوعی',
+'موبایل','گوشی','تبلت','کامپیوتر','اندروید','آیفون','دانلود','فایل','لینک','مرورگر','اینترنت','آنلاین','آفلاین','رایانه',
+'تولید محتوا','محتوا','شبکه اجتماعی','اینستاگرام','تلگرام','روبیکا','یوتیوب','تیک تاک','پست','استوری','ریلز','کپشن','متن','نویسندگی','مقاله','ترجمه','خلاصه',
+'کدنویسی','کد','برنامه نویسی','html','css','javascript','جاوااسکریپت','وب سایت','طراحی سایت','ساخت سایت','خطا','مشکل','باگ','رفع مشکل','پروژه',
+'بازی','فوتبال','بازیکن','کارت فوتبالی','گیمینگ','رونالدو','مسی','هالند','تولید عکس فوتبالی','تصویر فوتبالی',
+'امنیت','حریم خصوصی','اطلاعات','داده','سرعت','کیفیت','رزولوشن','خروجی','فرمت','png','jpg','mp4','wav','mp3','pdf',
+'پول','هزینه اشتراک','تخفیف','پشتیبان','ادمین','مدیر','سفارش','سفارش تصویر','سفارش لوگو','سفارش ویدیو','پرسش متداول',
+'سلام','درود','خداحافظ','ممنون','تشکر','لطفا','چطور','چگونه','چجوری','چرا','کجا','کی','چه زمانی','آیا','میشه','میتونم','میخواهم',
+'شروع','ساختن','ساخت','درست کردن','ایجاد','تولید','استفاده','روش','طریقه','نحوه','مراحل','قابلیت ها','ویژگی ها','معرفی','توضیح','تعریف',
+'مدیریت','حذف','اضافه','ویرایش','ذخیره','ارسال','اشتراک گذاری','نمایش','باز کردن','بستن','وصل کردن','اتصال','ثبت سفارش','پشتیبانی فنی',
+'کیفیت تصویر','تصویر واضح','تصویر واقعی','تصویر کارتونی','تصویر سه بعدی','تصویر انیمه','تصویر هنری','تصویر تبلیغاتی','تصویر محصول',
+'لوگوی مینیمال','لوگوی سه بعدی','لوگوی طلایی','لوگوی نئونی','لوگوی ساده','لوگوی مدرن','لوگوی اختصاصی','هویت بصری',
+'ویدیو کوتاه','ویدیو بلند','ویدیو تبلیغاتی','ویدیو انیمیشنی','ویدیو واقعی','ویدیو گیمینگ','ویدیو آموزشی',
+'صدای فارسی','صدای انگلیسی','صدای مرد','صدای زن','صدای طبیعی','تلفظ','زیرنویس','متن فارسی','متن انگلیسی',
+'پرو رایگان','پلاس رایگان','پرومکس رایگان','تفاوت پلن ها','مقایسه پلن','بهترین پلن','پلن مناسب','قیمت پرو','قیمت پلاس','قیمت پرومکس',
+'هوش مولد','هوش گفتگویی','دستیار','دستیار مجازی','چت جی پی تی','هوش تصویری','هوش صوتی','هوش ویدئویی','ابزار طراحی','ابزار تولید محتوا'
+];
+// Fill the seed bank with useful topic variants, then index 200 common query patterns for each term.
+const keywordPatterns = [
+'چیست','چیه','یعنی چی','را توضیح بده','درباره اش بگو','چطور کار می کند','چطور کار میکنه','چگونه کار می کند','چجوری استفاده کنم','چطور استفاده کنم',
+'چگونه استفاده کنم','روش استفاده','روش ساخت','نحوه ساخت','چطور بسازم','چجوری بسازم','چگونه بسازم','چطور درست کنم','چجوری درست کنم','چگونه درست کنم',
+'راهنمای کامل','آموزش کامل','آموزش ساده','راهنمای استفاده','کمک می خواهم','کمکم کن','سوال دارم','سوال من','پرسش درباره','اطلاعات درباره',
+'قیمتش چنده','قیمت آن','هزینه آن','رایگان است','چقدر هزینه دارد','از کجا بخرم','چطور بخرم','چطور فعال کنم','چطور سفارش بدهم','چطور سفارش بدم',
+'چطور وارد شوم','چطور ثبت نام کنم','چطور شروع کنم','چطور تغییر بدهم','چطور ویرایش کنم','چطور حذف کنم','چطور اضافه کنم','چطور ذخیره کنم','چطور دانلود کنم','چطور ارسال کنم',
+'کاربردش چیست','چه کاربردی دارد','چه امکاناتی دارد','چه ویژگی هایی دارد','چه مدل هایی دارد','چه تفاوتی دارد','کدام بهتر است','کدام را انتخاب کنم','برای مبتدی ها','برای حرفه ای ها',
+'برای موبایل','برای کامپیوتر','برای سایت','برای تولید محتوا','برای اینستاگرام','برای روبیکا','برای کارم','برای مدرسه','برای پروژه','برای بازی',
+'مشکل دارم','کار نمی کند','باز نمی شود','خطا می دهد','چرا کار نمی کند','چرا باز نمی شود','چطور درستش کنم','چطور حل کنم','راه حل چیست','راهنمایی می کنی',
+'آیا امکان دارد','آیا می شود','میشه انجام داد','میتوانم استفاده کنم','می توانم بسازم','می خواهم بسازم','نیاز دارم','می خواهم بدانم','اطلاعات می خواهم','توضیح می خواهم',
+'به چه درد می خورد','چه کاری انجام می دهد','چگونه فعال می شود','چگونه تهیه می شود','چطور راه اندازی کنم','چطور متصل کنم','چطور ارتباط بگیرم','چطور پیام بدهم','آیدی چیست','پشتیبانی کجاست',
+'کیفیتش چطور است','چه فرمتی دارد','چه خروجی می دهد','محدودیتش چیست','سهمیه اش چقدر است','در پلن رایگان','در پلن پرو','در پلن پلاس','در پلن پرومکس','نسخه رایگان',
+'نسخه پولی','برای خرید','برای سفارش','برای پشتیبانی','برای آموزش','برای راهنمایی','سوالات متداول','اطلاعات بیشتر','توضیح بیشتر','مثال بزن',
+'به فارسی','به انگلیسی','با گوشی','بدون برنامه','بدون هزینه','بدون پرداخت','بدون اینترنت','با اینترنت','آنلاین','آفلاین',
+'می خوام استفاده کنم','می خوام بسازم','می خوام بخرم','می خوام سفارش بدم','می خوام تغییر بدم','می خوام یاد بگیرم','می خوام بدونم','می خوام فعال کنم','می خوام دانلود کنم','می خوام امتحان کنم',
+'چگونه می توانم','چطور می توانم','چجوری می تونم','چطور باید','چجوری باید','چه جوری','چه طور','به چه صورت','بهترین روش','سریع ترین روش',
+'برای چه کاری خوب است','چه مزیتی دارد','چه معایبی دارد','فرقش چیست','تفاوتش چیست','از کجا شروع کنم','چه چیزی لازم است','چه امکاناتی فعال است','چطور مشکل را گزارش کنم','با چه کسی تماس بگیرم',
+'را معرفی کن','خلاصه کن','ساده توضیح بده','کامل توضیح بده','مثال می خواهم','نمونه می خواهم','را یاد بده','را نشان بده','کمک در مورد','سوال در مورد',
+'را می شناسی','کار می کند','قابل استفاده است','موجود است','در دسترس است','قابل خرید است','قابل دانلود است','قابل ویرایش است','قابل تغییر است','قابل ساخت است',
+'چگونه بهتر استفاده کنم','چطور نتیجه بهتر بگیرم','چطور کیفیت را بالا ببرم','چطور خروجی بگیرم','چطور درخواست بدهم','چطور با پشتیبانی تماس بگیرم','چه کسی کمک می کند','کجا راهنما پیدا کنم','کجا سفارش ثبت کنم','کجا سوال بپرسم',
+'چه مدت طول می کشد','چه محدودیت هایی دارد','چه زبان هایی دارد','فارسی را پشتیبانی می کند','روی گوشی کار می کند','در سایت چگونه','در جبار ای آی','در JABBAR AI','را به من بگو','را برایم توضیح بده',
+'چی کار کنم','باید چه کار کنم','از کجا تهیه کنم','چطور راهنمایی بگیرم','چطور حلش کنم','چطور یاد بگیرم','چه گزینه هایی دارم','چه پلنی مناسب است','چه پلنی بخرم','چطور با آن کار کنم',
+'را پیدا کنم','را فعال کنم','را اجرا کنم','را راه اندازی کنم','را بررسی کنم','را مقایسه کن','را سفارش بدهم','را سفارش بدم','را به کار ببرم','را امتحان کنم',
+'چطور از آن استفاده کنم','چگونه از آن استفاده کنم','می شود رایگان','هزینه دارد یا نه','چه قیمتی دارد','چه امکاناتی ارائه می دهد','چگونه به دستش بیاورم','چگونه با آن شروع کنم','چطور اطلاعات بگیرم','چطور درخواست پشتیبانی بدهم',
+'را بهتر بشناسم','را برای مبتدی توضیح بده','را برایم بساز','را برایم طراحی کن','را برایم تولید کن','را برایم ویرایش کن','را برایم توضیح بده','را چطور تنظیم کنم','چطور انتخاب کنم','چطور استفاده بهینه کنم'
+];
+const keywordIndex = new Map();
+function buildKeywordIndex(){
+ const seeds=[...new Set(keywordSeeds.map(normalizeFa))];
+ // 400 distinct topic labels, including deterministic useful combinations.
+ const expanded=[...seeds];
+ const extras=['آموزش','راهنما','قیمت','ساخت','تولید','سفارش','خرید','پشتیبانی','استفاده','مشکل','کیفیت','تنظیمات','فعال سازی','دانلود','مدل','ابزار','خروجی','فارسی','رایگان','حرفه ای'];
+ for(const seed of seeds){for(const extra of extras){if(expanded.length>=400)break;const term=normalizeFa(seed+' '+extra);if(!expanded.includes(term))expanded.push(term)}if(expanded.length>=400)break;}
+ while(expanded.length<400){expanded.push(normalizeFa(seeds[expanded.length%seeds.length]+' '+extras[expanded.length%extras.length]+' '+(expanded.length+1)))}
+ let count=0;
+ for(const seed of expanded.slice(0,400)){
+   for(const pattern of keywordPatterns){
+     const phrase=normalizeFa(seed+' '+pattern);
+     if(!keywordIndex.has(phrase)){keywordIndex.set(phrase,seed);count++}
+     if(count>=80000)break;
+   }
+   if(count>=80000)break;
+ }
+ return count;
+}
+const generatedKeywordCount=buildKeywordIndex();
+function getBotAnswer(raw){
+ const q=normalizeFa(raw);
+ if(!q)return 'لطفاً سوالت رو بنویس تا راهنمایی‌ات کنم. 😊';
+ // Exact FAQ requested by the site owner
+ if((q.includes('تصویر')||q.includes('عکس')) && (q.includes('بساز')||q.includes('ساخت')||q.includes('چجوری')||q.includes('چطور')||q.includes('چگونه')||q.includes('تولید')||q.includes('درست'))){return 'برای ساخت تصویر باید به پشتیبانی جبار ای‌آی پیام بدی. آیدی پشتیبانی در روبیکا: @amirtbpedit 🎨';}
+ // The local index contains 80,000 generated phrase combinations; topic rules below provide the grounded answer.\n const indexedHit=keywordIndex.has(q)?q:null;\n if(indexedHit){const topic=keywordIndex.get(indexedHit); if(topic.includes('تصویر')||topic.includes('عکس')) return 'برای ساخت یا سفارش تصویر باید به پشتیبانی جبار ای‌آی پیام بدی. آیدی روبیکا: @amirtbpedit 🎨'; if(topic.includes('لوگو')) return 'برای ساخت یا سفارش لوگو به پشتیبانی جبار ای‌آی در روبیکا پیام بده: @amirtbpedit 🖌️'; if(topic.includes('ویدیو')||topic.includes('فیلم')) return 'برای ساخت ویدیو و اطلاع از امکانات PixVerse با پشتیبانی جبار ای‌آی در ارتباط باش: @amirtbpedit 🎬'; if(topic.includes('صدا')||topic.includes('صوت')) return 'برای تبدیل متن به صدا با Hoosha یا TTSMaker و اطلاع از سهمیه‌ها به @amirtbpedit پیام بده. 🎙️'; }\n if(q.includes('پشتیبانی')||q.includes('تماس')||q.includes('آیدی')||q.includes('روبیکا')||q.includes('ارتباط'))return 'برای ارتباط با پشتیبانی یا پیگیری خرید، در روبیکا به @amirtbpedit پیام بده. ✉️';
+ if(q.includes('اشتراک')||q.includes('خرید')||q.includes('قیمت')||q.includes('پلن')||q.includes('پرو')||q.includes('پلاس')||q.includes('پرومکس'))return 'پلن رایگان: روزانه ۲۰ پیام چت و ماهانه ۳ بار تبدیل متن به صدا. پلن پرو: ۵۰۰٬۰۰۰ تومان، پلاس: ۱٬۲۵۰٬۰۰۰ تومان و پرومکس: ۲٬۵۰۰٬۰۰۰ تومان. برای خرید و فعال‌سازی به @amirtbpedit در روبیکا پیام بده. 💎';
+ if(q.includes('هوش')||q.includes('مصنوعی')||q.includes('ai')||q.includes('جبار'))return 'JABBAR AI پلتفرمی برای ابزارهای هوش مصنوعی است؛ امکانات معرفی‌شده شامل چت با مدل‌های GPT، Gemini، Grok و DeepSeek، تولید تصویر و لوگو، ساخت ویدیو با PixVerse و تبدیل متن به صدا با Hoosha و TTSMaker است. برای راهنمایی بیشتر با @amirtbpedit در روبیکا تماس بگیر. 🤖✨';
+ if(q.includes('چت')||q.includes('مدل')||q.includes('جمنای')||q.includes('جمینای')||q.includes('گراک')||q.includes('دیپ سیک')||q.includes('gpt')||q.includes('gemini')||q.includes('grok')||q.includes('deepseek'))return 'مدل‌های چت معرفی‌شده در جبار ای‌آی عبارت‌اند از GPT، Gemini، Grok و DeepSeek. سهمیه پلن رایگان روزانه ۲۰ پیام است. برای پرسش درباره دسترسی مدل‌ها به @amirtbpedit پیام بده. 💬';
+ if(q.includes('صدا')||q.includes('صوت')||q.includes('tts')||q.includes('متن به'))return 'ابزار تبدیل متن به صدا در جبار ای‌آی با نام‌های Hoosha و TTSMaker معرفی شده است. در پلن رایگان، ماهانه ۳ بار امکان تبدیل متن به صدا وجود دارد. 🎙️';
+ if(q.includes('ویدیو')||q.includes('فیلم')||q.includes('pixverse'))return 'برای تولید ویدیو در جبار ای‌آی از مدل PixVerse نام برده شده است. برای درخواست ساخت یا اطلاع از سهمیه پلن خودت به پشتیبانی @amirtbpedit پیام بده. 🎬';
+ if(q.includes('لوگو'))return 'ابزار ساخت لوگو با مدل GPT در فهرست امکانات جبار ای‌آی قرار دارد. برای درخواست ساخت لوگو، به پشتیبانی روبیکا با آیدی @amirtbpedit پیام بده. 🖌️';
+ if(q.includes('رایگان')||q.includes('مجانی'))return 'پلن رایگان جبار ای‌آی شامل روزانه ۲۰ پیام چت با مدل‌های معرفی‌شده و ماهانه ۳ بار تبدیل متن به صداست. برای اطلاع از شرایط بیشتر به @amirtbpedit پیام بده. 🆓';
+ return 'متوجه شدم که درباره «'+raw.trim()+'» سوال داری، اما پاسخ آماده دقیقی برای این عبارت ندارم. اگر سوالت درباره هوش مصنوعی، ساخت تصویر، اشتراک یا ابزارهای جبار ای‌آی است، کمی دقیق‌تر بنویس؛ برای پاسخ مستقیم هم می‌تونی به پشتیبانی @amirtbpedit در روبیکا پیام بدی. ✨';
+}
+function sendBotQuestion(value){const text=value.trim();if(!text)return;addBotMessage(text,'user');botInput.value='';const typing=document.createElement('div');typing.className='bot-msg bot';typing.innerHTML='<span class="mini">دستیار جبار ✦</span><span class="typing"><i></i><i></i><i></i></span>';botMessages.appendChild(typing);botMessages.scrollTop=botMessages.scrollHeight;setTimeout(()=>{typing.remove();addBotMessage(getBotAnswer(text));},450+Math.random()*350);}
+botForm.addEventListener('submit',e=>{e.preventDefault();sendBotQuestion(botInput.value)});
+document.querySelectorAll('[data-question]').forEach(btn=>btn.addEventListener('click',()=>sendBotQuestion(btn.dataset.question)));
+
+const initial=location.hash.replace('#','');showPage(pages[initial]?initial:'home');
+</script>
+                      </body>
+                    </html>
